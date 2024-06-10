@@ -1,0 +1,11 @@
+# generated types
+website/.astro/
+
+# Astro build output
+website/dist/
+
+# dependencies
+website/node_modules/
+
+# macOS-specific files
+.DS_Store
