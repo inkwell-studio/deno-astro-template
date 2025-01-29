@@ -4,7 +4,7 @@
         "check-code": "deno lint && deno fmt && deno check **/*.ts **/*.tsx",
         "dev": "astro dev",
         "build": "deno task check-code && astro build && deno run -W source/robots.txt.ts",
-        "serve": "deno run -RNE ./dist/server/entry.mjs",
+        "serve": "deno run -RNE dist/server/entry.mjs",
         "test-e2e": "deno test -N e2e-tests"
     },
     "nodeModulesDir": "auto",
