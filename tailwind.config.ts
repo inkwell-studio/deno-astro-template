@@ -10,7 +10,5 @@ export default {
             sans: ['PTSans', ...defaultTheme.fontFamily.sans],
             mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
         },
-        extend: {},
     },
-    plugins: [],
 } satisfies Config;
