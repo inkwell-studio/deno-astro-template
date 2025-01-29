@@ -28,6 +28,9 @@ jobs:
             - name: Install step
               run: 'deno install --allow-scripts=npm:sharp'
 
+            - name: Disable Astro telemetry
+              run: 'deno task disable-telemetry'
+
             - name: Build step
               run: 'deno task build'
 
