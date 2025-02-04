@@ -12,12 +12,13 @@ const sitemapConfig: SitemapOptions = {
 
 export default defineConfig({
     site: baseUrl,
-    adapter: deno(),
-    integrations: [react(), tailwind(), sitemap(sitemapConfig)],
     srcDir: './source',
+    trailingSlash: 'never',
     prefetch: {
         prefetchAll: true,
     },
+    adapter: deno(),
+    integrations: [react(), tailwind(), sitemap(sitemapConfig)],
     image: {
         // This is used because `@deno/astro-adapter` does not support the `npm:sharp` image processor
         service: passthroughImageService(),
