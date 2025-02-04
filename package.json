@@ -6,6 +6,7 @@
         "@deno/astro-adapter": "~0.2.0",
         "@headlessui/react": "~2.2.0",
         "@nanostores/react": "~0.8.4",
+        "@std/text": "npm:@jsr/std__text@~1.0.10",
         "@types/react": "~19.0.0",
         "astro": "~5.1.8",
         "nanostores": "~0.11.3",

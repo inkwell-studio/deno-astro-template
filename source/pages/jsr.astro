@@ -1,0 +1,29 @@
+---
+import { toPascalCase } from '@std/text';
+
+import BaseLayout from '@layouts/base.astro';
+
+const exampleString = 'this example string';
+---
+
+<BaseLayout>
+    <div class="flex flex-col justify-center items-center h-[70vh] gap-14">
+        <div class="text-center py-16 px-32 border border-stone-400 rounded">
+            <h2>JSR Integration Example</h2>
+            <p>
+                Converting <span class="text-code">{exampleString}</span> to Pascal case:
+                <span class="text-code">{toPascalCase(exampleString)}</span>
+            </p>
+        </div>
+
+        <div>
+            See <span class="text-code">DEVELOPMENT.md</span> for details on using packages from <a href="https://jsr.io/" class="text-code"
+            >jsr.io</a>.
+        </div>
+
+        <a
+            href="/"
+            class="text-5xl text-stone-500 hover:text-stone-950 dark:text-slate-500 dark:hover:text-slate-300 font-bold transition-colors"
+        >home</a>
+    </div>
+</BaseLayout>

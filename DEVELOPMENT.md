@@ -20,8 +20,8 @@ To use this repository for your own project:
 
 [Deno 2](https://deno.com/) is necessary.
 
-Using [Visual Studio Code](https://code.visualstudio.com/) is optional, though the project is set up for it. If it is used, the following
-extensions may be helpful:
+Using [Visual Studio Code](https://code.visualstudio.com/) is optional, though this project is configured for it. If it is used, the
+following extensions may be helpful:
 
 - [Deno](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
 - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
@@ -99,3 +99,58 @@ The code may be debugged with Visual Studio Code via the `.vscode/launch.json` c
 ## Deployment to Deno Deploy
 
 See `.github/workflows/deploy.yml`.
+
+## Using JSR packages
+
+Packages from [jsr.io](https://jsr.io/) may be used by manually adding them to `package.json` and then executing `deno install`.
+
+For example, to add the `@std/html` package:
+
+```JSON
+// package.json
+{
+    "dependencies": {
+        "@std/html": "npm:@jsr/std__html@1"
+    }
+}
+```
+
+After executing `deno install`, you will then be able to use the package as follows:
+
+```TypeScript
+import { escape } from '@std/html`;
+```
+
+All of this relies on the `@jsr` entry within `.npmrc`.
+
+### Regarding names
+
+In `package.json`, the property key may be anything you'd like (it is `@std/html` in the example above).
+
+The property value (`npm:@jsr/std__html@1` above) is derived from the original package name of `@std/html` as follows:
+
+1. The slash between the scope and the package name is replaced with two underscores: `__`
+2. The `@` is replaced with `npm:@jsr/`
+3. The regular semantic version tag is added at the end
+
+### Type declarations
+
+Visual Studio Code may not be able to resolve the type declarations for JSR packages in `.astro` files without modifications to
+`tsconfig.json`.
+
+As an example, the following will allow type declarations to be resolved for packages from the Deno standard library:
+
+```JSON
+// tsconfig.json
+{
+    "compilerOptions": {
+        "paths": {
+            "@std/*": ["node_modules/@std/*/mod.ts"]
+        }
+    }
+}
+```
+
+### Further reading
+
+For more information, see the [JSR documentation](https://jsr.io/docs/npm-compatibility#advanced-setup).

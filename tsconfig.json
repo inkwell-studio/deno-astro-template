@@ -4,7 +4,9 @@
         "paths": {
             "@components/*": ["source/components/*"],
             "@layouts/*": ["source/layouts/*"],
-            "@logic/*": ["source/logic/*"]
+            "@logic/*": ["source/logic/*"],
+
+            "@std/*": ["node_modules/@std/*/mod.ts"]
         }
     }
 }

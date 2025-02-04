@@ -1,4 +1,4 @@
-# Deno-Astro Template
+# Deno–Astro Template
 
 This is an [Astro](https://astro.build/) site that runs on [Deno Deploy](https://deno.com/deploy). It is configured to use
 [React](https://react.dev/) and [Tailwind CSS](https://tailwindcss.com/).
