@@ -3090,7 +3090,6 @@
         "npm:@headlessui/react@2.2",
         "npm:@jsr/std__text@~1.0.10",
         "npm:@nanostores/react@~0.8.4",
-        "npm:@types/react@19.0",
         "npm:astro@5.2",
         "npm:nanostores@~0.11.3",
         "npm:react-dom@19.0",
