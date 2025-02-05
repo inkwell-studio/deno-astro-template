@@ -42,25 +42,6 @@ Disable Astro telemetry:
 deno task disable-telemetry
 ```
 
-## Writing code
-
-This project is set up for development with [Visual Studio Code](https://code.visualstudio.com/), and is configured to have the editor
-format files each time they are saved.
-
-Packages are managed with both `deno.json` and `package.json`. Deno will modify the correct file when packages are added with
-`deno add some-package@x.x.x`.
-
-`package.json` is used only for tracking npm packages.
-
-To format all code, and to lint and typecheck all `*.astro`, `*.ts` and `*.tsx` files, execute `deno task check-code`.
-
-### Why are `deno.json` and `package.json` both used?
-
-- The `deno.json` file exists so that Visual Studio Code will delegate the formatting of all files to Deno during its format-on-save
-  process. Without it, some files, like `*.astro`, will be managed by a different formatter.
-- The `package.json` file is used to manage npm dependencies, as managing these with `deno.json` results in Vite errors during Astro's
-  bundling process.
-
 ## Running the app
 
 To serve a development version of the site:
@@ -85,6 +66,25 @@ deno task serve
 # (in a separate shell)
 deno task test-e2e
 ```
+
+## Writing code
+
+This project is set up for development with [Visual Studio Code](https://code.visualstudio.com/), and is configured to have the editor
+format files each time they are saved.
+
+Packages are managed with both `deno.json` and `package.json`. Deno will modify the correct file when packages are added with
+`deno add some-package@x.x.x`.
+
+`package.json` is used only for tracking npm packages.
+
+To format all code, and to lint and typecheck all `*.astro`, `*.ts` and `*.tsx` files, execute `deno task check-code`.
+
+### Why are `deno.json` and `package.json` both used?
+
+- The `deno.json` file exists so that Visual Studio Code will delegate the formatting of all files to Deno during its format-on-save
+  process. Without it, some files, like `*.astro`, will be managed by a different formatter.
+- The `package.json` file is used to manage npm dependencies, as managing these with `deno.json` results in Vite errors during Astro's
+  bundling process.
 
 ## Debugging
 
