@@ -1,7 +1,18 @@
 {
     "tasks": {
         "disable-telemetry": "astro telemetry disable",
-        "check-code": "deno lint && deno fmt && deno check **/*.ts **/*.tsx",
+
+        "lint": "deno lint",
+        "format": "deno fmt",
+        "check-ts": {
+            "dependencies": [
+                "lint",
+                "format"
+            ],
+            "command": "deno check ./"
+        },
+        "check-code": "deno task check-ts && astro check",
+
         "dev": "astro dev",
         "build": "deno task check-code && astro build && deno run -W source/robots.txt.ts",
         "serve": "deno run -RNE dist/server/entry.mjs",

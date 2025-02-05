@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
+        "allowImportingTsExtensions": true,
+        "allowSyntheticDefaultImports": true,
         "paths": {
             "@components/*": ["source/components/*"],
             "@layouts/*": ["source/layouts/*"],
@@ -8,5 +10,9 @@
 
             "@std/*": ["node_modules/@std/*/mod.ts"]
         }
-    }
+    },
+    // This is set only for the sake of the `astro check` command (see `deno.json`).
+    "include": [
+        "**/*.astro"
+    ]
 }
