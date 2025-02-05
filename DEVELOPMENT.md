@@ -52,13 +52,13 @@ Packages are managed with both `deno.json` and `package.json`. Deno will modify 
 
 `package.json` is used only for tracking npm packages.
 
-To format all code, and to lint and typecheck all `*.ts` and `*.tsx` files, execute `deno task check-code`.
+To format all code, and to lint and typecheck all `*.astro`, `*.ts` and `*.tsx` files, execute `deno task check-code`.
 
 ### Why are `deno.json` and `package.json` both used?
 
 - The `deno.json` file exists so that Visual Studio Code will delegate the formatting of all files to Deno during its format-on-save
   process. Without it, some files, like `*.astro`, will be managed by a different formatter.
-- The `package.json` file is used to manage npm dependencies since managing these with `deno.json` results in Vite errors during Astro's
+- The `package.json` file is used to manage npm dependencies, as managing these with `deno.json` results in Vite errors during Astro's
   bundling process.
 
 ## Running the app
