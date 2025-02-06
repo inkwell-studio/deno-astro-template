@@ -6,7 +6,7 @@ export default {
     darkMode: 'selector',
     theme: {
         fontFamily: {
-            // See `source/global-styles.css` for the `@font-face` definitions
+            // See `source/global.css` for the `@font-face` definitions
             sans: ['PTSans', ...defaultTheme.fontFamily.sans],
             mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
         },

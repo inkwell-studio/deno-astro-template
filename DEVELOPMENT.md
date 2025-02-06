@@ -121,7 +121,7 @@ After executing `deno install`, you will then be able to use the package as foll
 import { escape } from '@std/html`;
 ```
 
-All of this relies on the `@jsr` entry within `.npmrc`.
+This is made possible by the `@jsr` entry in `.npmrc`.
 
 ### Regarding names
 
