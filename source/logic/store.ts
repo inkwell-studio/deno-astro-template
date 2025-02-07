@@ -1,6 +1,6 @@
 import { atom } from 'nanostores';
 
-import { DARK_MODE_MEDIA_QUERY, LOCAL_STORAGE_KEY_THEME, onThemeSelection, Theme, updateTailwindClass } from '@logic/theme.ts';
+import { DARK_MODE_MEDIA_QUERY, LOCAL_STORAGE_KEY_THEME, onThemeSelection, Theme, updateDarkModeClass } from '@logic/theme.ts';
 import { IS_BROWSER } from '@logic/utils.ts';
 
 export const $count = atom(0);
@@ -27,7 +27,7 @@ export function watchForThemeChanges(): void {
     const mediaQueryList = globalThis.matchMedia(DARK_MODE_MEDIA_QUERY);
     mediaQueryList.onchange = (event) => {
         if (Theme.SYSTEM === $theme.get()) {
-            updateTailwindClass(event.matches);
+            updateDarkModeClass(event.matches);
         }
     };
 }

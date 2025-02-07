@@ -4,6 +4,8 @@
         "allowImportingTsExtensions": true,
         "allowSyntheticDefaultImports": true,
         "paths": {
+            "@globalCss": ["source/global.css"],
+
             "@components/*": ["source/components/*"],
             "@layouts/*": ["source/layouts/*"],
             "@logic/*": ["source/logic/*"],

@@ -1,3 +1,19 @@
+@import 'tailwindcss';
+
+/* The class referenced here must match that specified by the `DARK_MODE_CLASS` constant in `theme.ts` */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --tailwind-default-font-sans:
+        ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --tailwind-default-font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --tailwind-default-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --font-sans: PTSans, var(--tailwind-default-font-sans);
+    --font-serif: var(--tailwind-default-font-serif);
+    --font-mono: 'JetBrains Mono', var(--tailwind-default-font-mono);
+}
+
 @font-face {
     font-family: 'PTSans';
     font-weight: 400;
