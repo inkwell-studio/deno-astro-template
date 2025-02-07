@@ -1,7 +1,7 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@std/assert@~1.0.11": "1.0.11",
+    "jsr:@std/assert@1.0.11": "1.0.11",
     "jsr:@std/cli@^1.0.8": "1.0.11",
     "jsr:@std/encoding@^1.0.5": "1.0.6",
     "jsr:@std/fmt@^1.0.3": "1.0.5",
@@ -13,21 +13,22 @@
     "jsr:@std/path@1.0": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
     "jsr:@std/streams@^1.0.8": "1.0.8",
-    "npm:@astrojs/check@~0.9.4": "0.9.4_typescript@5.6.2",
-    "npm:@astrojs/react@~4.1.6": "4.1.6_@types+react@19.0.8_@types+react-dom@19.0.3__@types+react@19.0.8_react@19.0.0_react-dom@19.0.0__react@19.0.0_vite@6.0.11",
-    "npm:@astrojs/sitemap@~3.2.1": "3.2.1",
-    "npm:@astrojs/tailwind@~5.1.5": "5.1.5_astro@5.2.5__typescript@5.6.2__vite@6.0.11__zod@3.24.1_tailwindcss@3.4.17__postcss@8.5.1_postcss@8.5.1_typescript@5.6.2",
-    "npm:@deno/astro-adapter@0.2": "0.2.0_astro@5.2.5__typescript@5.6.2__vite@6.0.11__zod@3.24.1_typescript@5.6.2",
-    "npm:@headlessui/react@2.2": "2.2.0_react@19.0.0_react-dom@19.0.0__react@19.0.0",
-    "npm:@jsr/std__text@~1.0.10": "1.0.10",
-    "npm:@nanostores/react@~0.8.4": "0.8.4_nanostores@0.11.3_react@19.0.0",
+    "npm:@astrojs/check@0.9.4": "0.9.4_typescript@5.6.2",
+    "npm:@astrojs/react@4.1.6": "4.1.6_@types+react@19.0.8_@types+react-dom@19.0.3__@types+react@19.0.8_react@19.0.0_react-dom@19.0.0__react@19.0.0_vite@6.0.11",
+    "npm:@astrojs/sitemap@3.2.1": "3.2.1",
+    "npm:@astrojs/tailwind@5.1.5": "5.1.5_astro@5.2.5__typescript@5.6.2__vite@6.0.11__zod@3.24.1_tailwindcss@3.4.17__postcss@8.5.1_postcss@8.5.1_typescript@5.6.2",
+    "npm:@deno/astro-adapter@0.2.0": "0.2.0_astro@5.2.5__typescript@5.6.2__vite@6.0.11__zod@3.24.1_typescript@5.6.2",
+    "npm:@headlessui/react@2.2.0": "2.2.0_react@19.0.0_react-dom@19.0.0__react@19.0.0",
+    "npm:@jsr/std__text@1.0.10": "1.0.10",
+    "npm:@nanostores/react@0.8.4": "0.8.4_nanostores@0.11.3_react@19.0.0",
+    "npm:@types/node@*": "22.5.4",
     "npm:@types/react@19.0": "19.0.8",
-    "npm:astro@5.2": "5.2.5_typescript@5.6.2_vite@6.0.11_zod@3.24.1",
+    "npm:@types/react@19.0.0": "19.0.0",
     "npm:astro@5.2.5": "5.2.5_typescript@5.6.2_vite@6.0.11_zod@3.24.1",
-    "npm:nanostores@~0.11.3": "0.11.3",
-    "npm:react-dom@19.0": "19.0.0_react@19.0.0",
-    "npm:react@19.0": "19.0.0",
-    "npm:tailwindcss@~3.4.17": "3.4.17_postcss@8.5.1",
+    "npm:nanostores@0.11.3": "0.11.3",
+    "npm:react-dom@19.0.0": "19.0.0_react@19.0.0",
+    "npm:react@19.0.0": "19.0.0",
+    "npm:tailwindcss@3.4.17": "3.4.17_postcss@8.5.1",
     "npm:typescript@5.6.2": "5.6.2"
   },
   "jsr": {
@@ -162,7 +163,7 @@
     "@astrojs/react@4.1.6_@types+react@19.0.8_@types+react-dom@19.0.3__@types+react@19.0.8_react@19.0.0_react-dom@19.0.0__react@19.0.0_vite@6.0.11": {
       "integrity": "sha512-lMBO+Va4JbLsXviagT9/ZmliwfQGmsiw4rvI4yusPZijQek3q5yfEnQor5XWNcErrkazjjNxY9BFO5f/eSfqmw==",
       "dependencies": [
-        "@types/react",
+        "@types/react@19.0.8",
         "@types/react-dom",
         "@vitejs/plugin-react",
         "react",
@@ -988,7 +989,13 @@
     "@types/react-dom@19.0.3_@types+react@19.0.8": {
       "integrity": "sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==",
       "dependencies": [
-        "@types/react"
+        "@types/react@19.0.8"
+      ]
+    },
+    "@types/react@19.0.0": {
+      "integrity": "sha512-MY3oPudxvMYyesqs/kW1Bh8y9VqSmf+tzqw3ae8a9DZW68pUe3zAdHeI1jc6iAysuRdACnVknHP8AhwD4/dxtg==",
+      "dependencies": [
+        "csstype"
       ]
     },
     "@types/react@19.0.8": {
@@ -3473,23 +3480,23 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@~1.0.11"
+      "jsr:@std/assert@1.0.11"
     ],
     "packageJson": {
       "dependencies": [
-        "npm:@astrojs/check@~0.9.4",
-        "npm:@astrojs/react@~4.1.6",
-        "npm:@astrojs/sitemap@~3.2.1",
-        "npm:@astrojs/tailwind@~5.1.5",
-        "npm:@deno/astro-adapter@0.2",
-        "npm:@headlessui/react@2.2",
-        "npm:@jsr/std__text@~1.0.10",
-        "npm:@nanostores/react@~0.8.4",
-        "npm:astro@5.2",
-        "npm:nanostores@~0.11.3",
-        "npm:react-dom@19.0",
-        "npm:react@19.0",
-        "npm:tailwindcss@~3.4.17",
+        "npm:@astrojs/check@0.9.4",
+        "npm:@astrojs/react@4.1.6",
+        "npm:@astrojs/sitemap@3.2.1",
+        "npm:@astrojs/tailwind@5.1.5",
+        "npm:@deno/astro-adapter@0.2.0",
+        "npm:@headlessui/react@2.2.0",
+        "npm:@jsr/std__text@1.0.10",
+        "npm:@nanostores/react@0.8.4",
+        "npm:astro@5.2.5",
+        "npm:nanostores@0.11.3",
+        "npm:react-dom@19.0.0",
+        "npm:react@19.0.0",
+        "npm:tailwindcss@3.4.17",
         "npm:typescript@5.6.2"
       ]
     }
