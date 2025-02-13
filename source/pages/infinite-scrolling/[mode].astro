@@ -2,16 +2,26 @@
 import Box from '@components/infinite-scrolling/box.astro';
 
 import BaseLayout from '@layouts/base.astro';
+
+export function getStaticPaths(): Array<{ params: { mode: 'append' | 'replace' } }> {
+    return [
+        { params: { mode: 'append' } },
+        { params: { mode: 'replace' } },
+    ];
+}
+
+const { mode } = Astro.params;
+const modeText = mode === 'append' ? 'Appending' : 'Replacing';
 ---
 
 <BaseLayout>
     <div class="h-screen flex flex-col bg-white/20">
         <div class="py-4">
-            <h2 class="text-center mb-0">Infinite Scrolling Example</h2>
+            <h2 class="text-center mb-0">Infinite Scrolling Example — {modeText}</h2>
         </div>
 
         <div class="grow overflow-y-auto border-8 border-slate-400 dark:border-slate-300">
-            <Box n={0} />
+            <Box {mode} n={0} />
         </div>
 
         <a

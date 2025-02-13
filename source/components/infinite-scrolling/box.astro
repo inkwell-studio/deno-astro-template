@@ -1,19 +1,52 @@
 ---
 interface Props {
     n: number;
+    mode: 'append' | 'replace';
 }
 
-const { n } = Astro.props;
+const { n, mode } = Astro.props;
 
 const limit = 10;
 const nextBoxUrl = n < limit ? `/partials/infinite-scrolling/${n + 1}` : null;
+
+const commonBoxClasses =
+    ' h-2/3 bg-gray-300 dark:bg-slate-800 dark:text-slate-200 border-y-4 border-slate-400 text-4xl font-bold dark:border-slate-300 ';
 ---
 
-<div
-    class="h-1/2 flex justify-center items-center bg-gray-300 dark:bg-slate-800 dark:text-slate-200 border-y-4 border-slate-400 text-4xl font-bold dark:border-slate-300"
-    hx-trigger={nextBoxUrl ? 'intersect once' : undefined}
-    hx-get={nextBoxUrl ?? undefined}
-    hx-swap={nextBoxUrl ? 'afterend' : undefined}
->
-    {n}
-</div>
+{
+    mode === 'append' &&
+        (
+        <div
+            class={commonBoxClasses + ' flex justify-center items-center'}
+            hx-trigger={nextBoxUrl ? 'intersect once' : undefined}
+            hx-get={nextBoxUrl ?? undefined}
+            hx-swap={nextBoxUrl ? 'afterend' : undefined}
+        >
+            {n}
+        </div>
+    )
+}
+
+{
+    mode === 'replace' &&
+        (
+        <div class={commonBoxClasses + ' flex flex-col justify-between items-center'}>
+            <div>
+                {/* Intentionally empty */}
+            </div>
+            <div
+                class="bg-white/20"
+                hx-trigger={nextBoxUrl ? 'intersect once' : undefined}
+                hx-get={nextBoxUrl ?? undefined}
+                hx-swap={nextBoxUrl ? 'outerHTML' : undefined}
+                hx-target="next .infinite-scroll-next-content"
+            >
+                {n}
+            </div>
+            <div>
+                {/* Intentionally empty */}
+            </div>
+        </div>
+        <div class="infinite-scroll-next-content"></div>
+    )
+}
