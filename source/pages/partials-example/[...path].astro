@@ -4,8 +4,13 @@ import PartialLink from '@components/partial-link.astro';
 
 import { clientUrls } from './_paths';
 
-export function getStaticPaths() {
+export function getStaticPaths(): Array<{ params: { path: string | undefined } }> {
     return [{ params: { path: undefined } }, ...clientUrls.map((url) => ({ params: { path: url } }))];
+}
+
+enum ElementID {
+    PARTIALS_EXAMPLE_CONTENT_WRAPPER = 'content',
+    PARTIALS_EXAMPLE_CONTENT_WRAPPER_SELECTOR = '#content',
 }
 
 const links = [
@@ -56,7 +61,7 @@ const onloadContentUrl = links.find((link) => link.clientUrl === `/partials-exam
                                 <PartialLink
                                     clientUrl={link.clientUrl}
                                     contentUrl={link.contentUrl}
-                                    target="#content"
+                                    target={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER_SELECTOR}
                                     class="nav-link"
                                     label={link.label}
                                 />
@@ -69,10 +74,10 @@ const onloadContentUrl = links.find((link) => link.clientUrl === `/partials-exam
                 <div class="mb-4">Content from the server:</div>
                 {
                     onloadContentUrl ? (
-                        <div id="content" hx-get={onloadContentUrl} hx-trigger="load">
+                        <div id={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER} hx-get={onloadContentUrl} hx-trigger="load">
                             Loading...
                         </div>
-                    ) : <div id="content" />
+                    ) : <div id={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER} />
                 }
             </main>
         </div>

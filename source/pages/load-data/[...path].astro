@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/base.astro';
 import { getDataFromJson } from './_logic';
 
-export function getStaticPaths() {
+export function getStaticPaths(): Array<{ params: { path: number | undefined } }> {
     // Accept paths of numbers in the range [1, 100]
     const numberPaths = [...Array(100).keys()].map((i) => ({
         params: { path: ++i },
