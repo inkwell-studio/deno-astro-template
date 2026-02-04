@@ -20,7 +20,6 @@
     },
     "nodeModulesDir": "auto",
     "compilerOptions": {
-        "jsx": "react-jsx",
         "lib": [
             "deno.ns",
             "DOM"

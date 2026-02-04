@@ -1,7 +1,4 @@
 ---
-import { InteractiveExample } from '@components/interactive-example';
-import { ReactExample } from '@components/react-example';
-import { StateManagement } from '@components/state-example';
 import BaseLayout from '@layouts/base.astro';
 ---
 
@@ -74,14 +71,6 @@ import BaseLayout from '@layouts/base.astro';
             </section>
 
             <section>
-                <h2>React components</h2>
-                <div class="max-w-sm flex flex-col gap-4">
-                    <ReactExample />
-                    <InteractiveExample client:load />
-                </div>
-            </section>
-
-            <section>
                 <h2>Partials</h2>
                 <a href="/partials-example">Example</a>
             </section>
@@ -89,14 +78,6 @@ import BaseLayout from '@layouts/base.astro';
             <section>
                 <h2>Tailwind Headless UI</h2>
                 <a href="/tailwind-headless-ui">Demo</a>
-            </section>
-
-            <section>
-                <h2>State Management</h2>
-                <div class="flex gap-4">
-                    <StateManagement client:load />
-                    <StateManagement client:load />
-                </div>
             </section>
 
             <section>

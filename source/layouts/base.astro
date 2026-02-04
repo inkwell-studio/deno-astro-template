@@ -1,5 +1,4 @@
 ---
-import { ThemeToggle } from '@components/theme-toggle';
 import '../global.css';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -62,7 +61,6 @@ Astro.response.headers.set('Cache-Control', `max-age=${secondsPerWeek}`);
                     <span class="hidden dark:inline">Dark</span>
                     <span class="dark:hidden">Light</span>
                 </div>
-                <ThemeToggle client:load />
             </section>
         </div>
     </body>
