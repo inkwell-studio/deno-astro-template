@@ -4,7 +4,6 @@
         "allowSyntheticDefaultImports": true,
         "paths": {
             "@baseCss": ["source/base.css"],
-            "@components/*": ["source/components/*"],
             "@layouts/*": ["source/layouts/*"],
             "@logic/*": ["source/logic/*"],
 

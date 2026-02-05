@@ -39,7 +39,6 @@
     },
     "unstable": ["fmt-component"],
     "imports": {
-        "@components/": "./source/components/",
         "@layouts/": "./source/layouts/",
         "@logic/": "./source/logic/",
         "@std/assert": "jsr:@std/assert@1.0.18",
