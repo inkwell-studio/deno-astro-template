@@ -1,12 +1,24 @@
 ---
-import BaseLayout from '@layouts/base.astro';
+import BaseLayout from '@layouts/base-layout.astro';
 ---
 
 <style>
-    @reference '@globalCss';
+    @reference '#baseCss';
 
     a {
         @apply underline;
+    }
+
+    h1 {
+        @apply text-3xl;
+        @apply font-bold;
+        @apply mb-8;
+    }
+
+    h2 {
+        @apply text-lg;
+        @apply font-bold;
+        @apply mb-4;
     }
 
     section {
@@ -24,6 +36,15 @@ import BaseLayout from '@layouts/base.astro';
             @apply px-4;
             @apply rounded-t-md;
         }
+    }
+
+    .text-code {
+        @apply bg-black/10;
+        @apply dark:bg-black/30;
+        @apply text-sm;
+        @apply font-mono;
+        @apply p-1;
+        @apply rounded-sm;
     }
 </style>
 
@@ -48,8 +69,9 @@ import BaseLayout from '@layouts/base.astro';
                     <li>
                         With <a href="https://docs.astro.build/en/guides/prefetch/">prefetching</a>, the <span class="text-code"
                         >Cache-Control</span>
-                        response header should be set for all pages and partials (see <span class="text-code">base.astro</span> for an
-                        implementation, and <a href="https://docs.astro.build/en/guides/prefetch/#browser-support">Astro's documentation</a>
+                        response header should be set for all pages and partials (see <span class="text-code">base-layout.astro</span> for
+                        an implementation, and <a href="https://docs.astro.build/en/guides/prefetch/#browser-support"
+                        >Astro's documentation</a>
                         for the reasoning).
                     </li>
                 </ol>
@@ -73,11 +95,6 @@ import BaseLayout from '@layouts/base.astro';
             <section>
                 <h2>Partials</h2>
                 <a href="/partials-example">Example</a>
-            </section>
-
-            <section>
-                <h2>Tailwind Headless UI</h2>
-                <a href="/tailwind-headless-ui">Demo</a>
             </section>
 
             <section>

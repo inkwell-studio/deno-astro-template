@@ -30,6 +30,19 @@
             "skipFiles": [
                 "**/node_modules/**"
             ]
+        },
+        {
+            "request": "launch",
+            "name": "e2e tests",
+            "type": "node",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "deno",
+            "runtimeArgs": [
+                "task",
+                "test-e2e",
+                "--inspect-brk"
+            ],
+            "attachSimplePort": 9229
         }
     ]
 }

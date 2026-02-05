@@ -1,7 +1,5 @@
 {
     "tasks": {
-        "disable-telemetry": "astro telemetry disable",
-
         "lint": "deno lint",
         "format": "deno fmt",
         "check-ts": {
@@ -9,14 +7,17 @@
                 "lint",
                 "format"
             ],
-            "command": "deno check ./"
+            "command": "deno check ./ --frozen"
         },
         "check-code": "deno task check-ts && astro check",
 
         "dev": "astro dev",
+
         "build": "deno task check-code && astro build && deno run -W source/robots.txt.ts",
         "serve": "deno run -RNE dist/server/entry.mjs",
-        "test-e2e": "deno test -N e2e-tests"
+        "test-e2e": "deno test -N e2e-tests",
+
+        "disable-telemetry": "astro telemetry disable"
     },
     "nodeModulesDir": "auto",
     "compilerOptions": {
@@ -41,6 +42,8 @@
         "@components/": "./source/components/",
         "@layouts/": "./source/layouts/",
         "@logic/": "./source/logic/",
-        "@std/assert": "jsr:@std/assert@1.0.11"
-    }
+        "@std/assert": "jsr:@std/assert@1.0.18",
+        "@std/path": "jsr:@std/path@1.1.4"
+    },
+    "allowScripts": ["npm:esbuild@0.25.12", "npm:fsevents@2.3.3", "npm:sharp@0.34.5"]
 }

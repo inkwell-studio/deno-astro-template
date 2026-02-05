@@ -1,1 +1,1 @@
-export const baseUrl = 'https://www.TODO.dev';
+export const baseUrl = 'https://www.TODO.com';

@@ -16,29 +16,21 @@ To use this repository for your own project:
 4. Edit the base URL in `config.ts`
 5. Rename the root directory and `.vscode/deno-astro-template.code-workspace`
 
-# Development
+# Development Instructions
 
-[Deno 2](https://deno.com/) is necessary.
-
-Using [Visual Studio Code](https://code.visualstudio.com/) is optional, though this project is configured for it. If it is used, the
-following extensions may be helpful:
-
-- [Deno](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
-- [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-- [Tailwind Fold](https://marketplace.visualstudio.com/items?itemName=stivo.tailwind-fold)
+For helpful Visual Studio Code extensions, see `.vscode/extensions.json`.
 
 ## Setup
 
 Install packages:
 
-```
-deno install --allow-scripts=npm:sharp
+```shell
+deno install --frozen
 ```
 
 Disable Astro telemetry:
 
-```
+```shell
 deno task disable-telemetry
 ```
 
@@ -46,15 +38,22 @@ deno task disable-telemetry
 
 To serve a development version of the site:
 
-```
+```shell
 deno task dev
 ```
 
 To build and serve a production version of the site:
 
-```
+```shell
 deno task build
 deno task serve
+```
+
+To access your local site from other devices:
+
+```shell
+# Edit the port as necessary (4321)
+ssh -R 80:localhost:4321 ssh.localhost.run
 ```
 
 ## End-to-end testing
@@ -90,11 +89,12 @@ To format all code, and to lint and typecheck all `*.astro`, `*.ts` and `*.tsx` 
 
 The code may be debugged with Visual Studio Code via the `.vscode/launch.json` configurations:
 
-| Code to debug   | Prelaunch step  | Configuration to run |
-| --------------- | --------------- | -------------------- |
-| Client          | `deno task dev` | `Web app: client`    |
-| Server          | n/a             | `Web app: server`    |
-| Server & Client | n/a             | `Web app: all`       |
+| Code to debug    | Prelaunch step    | Configuration to run |
+| ---------------- | ----------------- | -------------------- |
+| Client           | `deno task dev`   | `Web app: client`    |
+| Server           | n/a               | `Web app: server`    |
+| Server & Client  | n/a               | `Web app: all`       |
+| End-to-end tests | `deno task serve` | `e2e tests`          |
 
 ## Deployment to Deno Deploy
 
@@ -102,7 +102,8 @@ See `.github/workflows/deploy.yml`.
 
 ## Using JSR packages
 
-Packages from [jsr.io](https://jsr.io/) may be used by manually adding them to `package.json` and then executing `deno install`.
+Packages from [jsr.io](https://jsr.io/) may be used in Astro components by manually adding them to `package.json` and then executing
+`deno install`.
 
 For example, to add the `@std/html` package:
 
@@ -118,6 +119,7 @@ For example, to add the `@std/html` package:
 After executing `deno install`, you will then be able to use the package as follows:
 
 ```TypeScript
+// your-page.astro
 import { escape } from '@std/html`;
 ```
 
@@ -125,7 +127,7 @@ This is made possible by the `@jsr` entry in `.npmrc`.
 
 ### Regarding names
 
-In `package.json`, the property key may be anything you'd like (it is `@std/html` in the example above).
+In `package.json`, the property key may be anything you like (it is `@std/html` in the example above).
 
 The property value (`npm:@jsr/std__html@1` above) is derived from the original package name of `@std/html` as follows:
 

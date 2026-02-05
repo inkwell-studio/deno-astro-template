@@ -1,6 +1,6 @@
-// The logic and constant values of this script must be kept in sync with those of the inline script in the `<head>` element of `base.astro`.
+// The logic and constant values of this script must be kept in sync with those of the inline script in the `<head>` element of `base-layout.astro`.
 
-// This value must match the class used in the selector for `@custom-variant dark` in `global.css`
+// This value must match the class used in the selector for `@custom-variant dark` in `base.css`
 export const DARK_MODE_CLASS = 'dark';
 export const DARK_MODE_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 export const LOCAL_STORAGE_KEY_THEME = 'theme';
@@ -19,15 +19,17 @@ export function onThemeSelection(themeValue: Theme): void {
 }
 
 export function updateDarkModeClass(darkModeEnabled: boolean): void {
+    const e = document.documentElement;
+
     if (darkModeEnabled) {
-        document.documentElement.classList.add(DARK_MODE_CLASS);
+        e.classList.add(DARK_MODE_CLASS);
     } else {
-        document.documentElement.classList.remove(DARK_MODE_CLASS);
+        e.classList.remove(DARK_MODE_CLASS);
 
         /* Remove the `class` attribute if it is empty to prevent the `class` attribute
            being present without a value, which is invalid HTML (i.e. `<html class>`) */
-        if (document.documentElement.classList.length === 0) {
-            document.documentElement.removeAttribute('class');
+        if (e.classList.length === 0) {
+            e.removeAttribute('class');
         }
     }
 }

@@ -1,11 +1,9 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "allowImportingTsExtensions": true,
         "allowSyntheticDefaultImports": true,
         "paths": {
-            "@globalCss": ["source/global.css"],
-
+            "@baseCss": ["source/base.css"],
             "@components/*": ["source/components/*"],
             "@layouts/*": ["source/layouts/*"],
             "@logic/*": ["source/logic/*"],

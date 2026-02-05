@@ -15,7 +15,9 @@ export default defineConfig({
     trailingSlash: 'never',
 
     adapter: deno(),
-    integrations: [sitemap(sitemapConfig)],
+    integrations: [
+        sitemap(sitemapConfig),
+    ],
 
     prefetch: {
         prefetchAll: true,
@@ -27,8 +29,18 @@ export default defineConfig({
     },
 
     vite: {
-        // The `tailwindcss` plugin appears to be incorrectly typed, so we assert that it's of the type `any` to avoid typechecking errors.
-        // deno-lint-ignore no-explicit-any
-        plugins: [tailwindcss() as any],
+        plugins: [tailwindcss()],
+        server: {
+            // This allows the localhost site to be accessed from other devices (see `DEVELOPMENT.md`)
+            allowedHosts: ['.lhr.life'],
+        },
+    },
+
+    experimental: {
+        preserveScriptOrder: true,
+    },
+
+    devToolbar: {
+        enabled: false,
     },
 });

@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@layouts/base.astro';
+import BaseLayout from '@layouts/base-layout.astro';
 
 export const prerender = false;
 
@@ -9,7 +9,7 @@ const now = new Date();
 <BaseLayout>
     <div class="flex flex-col justify-center items-center h-[70vh] gap-14">
         <div class="text-center py-16 px-32 border border-stone-400 rounded">
-            <h2>Server-Side Rendered Page</h2>
+            <h2 class="text-lg font-bold mb-4">Server-Side Rendered Page</h2>
             <p>
                 Generated at {new Date().toLocaleTimeString()} <span class="text-sm font-mono opacity-70">({now.getTime()})</span>
             </p>

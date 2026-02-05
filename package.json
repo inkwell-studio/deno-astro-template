@@ -1,14 +1,17 @@
 {
     "dependencies": {
-        "@astrojs/check": "0.9.4",
-        "@astrojs/sitemap": "3.2.1",
-        "@deno/astro-adapter": "0.2.0",
-        "@std/text": "npm:@jsr/std__text@1.0.10",
-        "@tailwindcss/vite": "4.0.4",
+        "@astrojs/check": "0.9.6",
+        "@astrojs/sitemap": "3.7.0",
+        "@deno/astro-adapter": "0.3.0",
+        "@std/text": "npm:@jsr/std__text@1.0.17",
+        "@tailwindcss/vite": "4.1.18",
         "astro": "5.17.1",
         "nanostores": "0.11.3",
         "tailwindcss": "4.0.4",
-        "typescript": "5.6.2"
+        "typescript": "5.9.2"
+    },
+    "imports": {
+        "#baseCss": "./source/base.css"
     },
     "COMMENTS": "The `typescript` package is used only for typechecking with the `astro check` command (see `deno.json`). Its version should match that used by Deno (found via `deno --version`)."
 }

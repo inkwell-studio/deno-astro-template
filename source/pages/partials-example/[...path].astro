@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@layouts/base.astro';
+import BaseLayout from '@layouts/base-layout.astro';
 import PartialLink from '@components/partial-link.astro';
 
 import { clientUrls } from './_paths';
@@ -36,7 +36,7 @@ const onloadContentUrl = links.find((link) => link.clientUrl === `/partials-exam
 ---
 
 <style>
-    @reference '@globalCss';
+    @reference '#baseCss';
 
     .nav-link {
         @apply p-2;

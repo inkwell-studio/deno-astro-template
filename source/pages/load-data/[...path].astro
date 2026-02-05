@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@layouts/base.astro';
+import BaseLayout from '@layouts/base-layout.astro';
 import { getDataFromJson } from './_logic';
 
 export function getStaticPaths(): Array<{ params: { path: number | undefined } }> {
@@ -39,7 +39,7 @@ const data = path ? getDataFromJson(path) : '(empty path)';
             </ul>
         </div>
         <div class="text-center py-16 px-32 border border-stone-400 rounded">
-            <h2>Data loaded:</h2> {data}
+            <h2 class="text-lg font-bold mb-4">Data loaded:</h2> {data}
         </div>
         <a
             href="/"
