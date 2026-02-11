@@ -23,6 +23,7 @@
     @font-face {
         font-family: 'PTSans';
         font-weight: 400;
+        font-display: swap;
         src:
             local('PT Sans'),
             url(/fonts/PTSans-Regular.ttf) format('truetype');
@@ -31,6 +32,7 @@
     @font-face {
         font-family: 'PTSans';
         font-weight: 700;
+        font-display: swap;
         src:
             local('PT Sans Bold'),
             url(/fonts/PTSans-Bold.ttf) format('truetype');
@@ -40,6 +42,7 @@
         font-family: 'PTSans';
         font-weight: 700;
         font-style: italic;
+        font-display: swap;
         src:
             local('PT Sans Bold Italic'),
             url(/fonts/PTSans-BoldItalic.ttf) format('truetype');
@@ -48,6 +51,7 @@
     @font-face {
         font-family: 'JetBrains Mono';
         font-weight: 600;
+        font-display: swap;
         src:
             local('JetBrains Mono Regular'),
             url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
