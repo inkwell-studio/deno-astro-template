@@ -7,6 +7,7 @@ createRobotsTxt();
 async function createRobotsTxt(): Promise<void> {
     const text = `\
 User-agent: *
+Allow: /
 
 Sitemap: ${baseUrl}/sitemap-index.xml
 `;
