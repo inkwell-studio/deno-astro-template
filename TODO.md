@@ -1,7 +1,3 @@
-- REMEMBER TO APPLY THESE CHANGES TO `MASTER` AS APPROPRIATE
-
-- add theme toggle
-
 - Set cache TTL values appropriately (for all files in `/public`)
 
 - Consider setting "font-display":

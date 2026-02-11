@@ -1,6 +1,27 @@
 ---
 import BaseLayout from '@layouts/base-layout.astro';
+
+import { Theme } from '@logic/theme';
 ---
+
+<script>
+    import { $theme } from '@logic/store';
+    import { Theme } from '@logic/theme';
+
+    // set the theme selector's value on page load
+    const currentTheme = $theme.get();
+    const themeInput: HTMLInputElement = document.querySelector(`input[name="theme"][value="${currentTheme}"]`);
+    if (themeInput) {
+        themeInput.checked = true;
+    }
+
+    // respond to user interaction
+    const themeSelector = document.getElementById('theme-selector');
+    themeSelector?.addEventListener('change', (e) => {
+        const selectedTheme = (e.target as HTMLInputElement).value;
+        $theme.set(selectedTheme as Theme);
+    });
+</script>
 
 <style>
     @reference '#baseCss';
@@ -119,6 +140,27 @@ import BaseLayout from '@layouts/base-layout.astro';
             <section>
                 <h2>JSR Integration</h2>
                 <a href="/jsr">Example</a>
+            </section>
+
+            <section>
+                <h2>Theme Selection</h2>
+
+                <fieldset id="theme-selector" class="flex flex-col gap-2">
+                    <label>
+                        <input type="radio" name="theme" value={Theme.LIGHT} />
+                        Light
+                    </label>
+
+                    <label>
+                        <input type="radio" name="theme" value={Theme.DARK} />
+                        Dark
+                    </label>
+
+                    <label>
+                        <input type="radio" name="theme" value={Theme.SYSTEM} />
+                        System
+                    </label>
+                </fieldset>
             </section>
         </div>
     </main>
