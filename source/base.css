@@ -26,6 +26,7 @@
         font-display: swap;
         src:
             local('PT Sans'),
+            local('PTSans-Regular'),
             url(/fonts/PTSans-Regular.ttf) format('truetype');
     }
 
@@ -35,6 +36,7 @@
         font-display: swap;
         src:
             local('PT Sans Bold'),
+            local('PTSans-Bold'),
             url(/fonts/PTSans-Bold.ttf) format('truetype');
     }
 
@@ -45,6 +47,7 @@
         font-display: swap;
         src:
             local('PT Sans Bold Italic'),
+            local('PTSans-BoldItalic'),
             url(/fonts/PTSans-BoldItalic.ttf) format('truetype');
     }
 
@@ -54,6 +57,7 @@
         font-display: swap;
         src:
             local('JetBrains Mono Regular'),
+            local('JetBrainsMono-Regular'),
             url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
     }
 }
