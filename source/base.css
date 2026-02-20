@@ -9,9 +9,10 @@
     --tailwind-default-font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
     --tailwind-default-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
-    --font-sans: PTSans, var(--tailwind-default-font-sans);
-    --font-serif: var(--tailwind-default-font-serif);
-    --font-mono: 'JetBrains Mono', var(--tailwind-default-font-mono);
+    /* For an unknown reason, the `local()` fonts used by the custom `@font-face` fonts are not used if the corresponding font family is the first value in these lists */
+    --font-sans: dummyValue, PTSans, var(--tailwind-default-font-sans);
+    --font-serif: dummyValue, var(--tailwind-default-font-serif);
+    --font-mono: dummyValue, 'JetBrains Mono', var(--tailwind-default-font-mono);
 }
 
 @layer base {
