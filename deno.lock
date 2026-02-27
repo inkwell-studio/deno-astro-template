@@ -17,7 +17,7 @@
     "jsr:@std/streams@^1.0.10": "1.0.10",
     "npm:@astrojs/check@0.9.6": "0.9.6_typescript@5.9.2",
     "npm:@astrojs/sitemap@3.7.0": "3.7.0",
-    "npm:@deno/astro-adapter@0.3.0": "0.3.0_astro@5.17.1__typescript@5.9.2__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.2",
+    "npm:@deno/astro-adapter@0.3.2": "0.3.2_astro@5.17.1__typescript@5.9.2__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.2",
     "npm:@jsr/std__text@1.0.17": "1.0.17",
     "npm:@tailwindcss/vite@4.1.18": "4.1.18_vite@6.4.1__picomatch@4.0.3",
     "npm:astro@5.17.1": "5.17.1_typescript@5.9.2_vite@6.4.1__picomatch@4.0.3_zod@3.25.76",
@@ -209,8 +209,8 @@
         "fontkitten"
       ]
     },
-    "@deno/astro-adapter@0.3.0_astro@5.17.1__typescript@5.9.2__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.2": {
-      "integrity": "sha512-HlN0k8XALGbzWCm58OPJBHWWpJUVXrAZRbEL/VUmZpVTl23+k3qlx7Pjdk1NcVNu1hKVl/6WTdwh9GUzd02Lpg==",
+    "@deno/astro-adapter@0.3.2_astro@5.17.1__typescript@5.9.2__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.2": {
+      "integrity": "sha512-nN0kQGobRs2XE3R+O/DWYQanEWpteJNsIf5TD65787qFEw2CrqkFNcNolZFJiKUF/2Y/TKyOLRjMS3F6auECVg==",
       "dependencies": [
         "astro"
       ]
@@ -3014,7 +3014,7 @@
       "dependencies": [
         "npm:@astrojs/check@0.9.6",
         "npm:@astrojs/sitemap@3.7.0",
-        "npm:@deno/astro-adapter@0.3.0",
+        "npm:@deno/astro-adapter@0.3.2",
         "npm:@jsr/std__text@1.0.17",
         "npm:@tailwindcss/vite@4.1.18",
         "npm:astro@5.17.1",

@@ -2,7 +2,7 @@
     "dependencies": {
         "@astrojs/check": "0.9.6",
         "@astrojs/sitemap": "3.7.0",
-        "@deno/astro-adapter": "0.3.0",
+        "@deno/astro-adapter": "0.3.2",
         "@std/text": "npm:@jsr/std__text@1.0.17",
         "@tailwindcss/vite": "4.1.18",
         "astro": "5.17.1",

@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import deno from '@deno/astro-adapter';
 import sitemap, { SitemapOptions } from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
@@ -21,11 +21,6 @@ export default defineConfig({
 
     prefetch: {
         prefetchAll: true,
-    },
-
-    image: {
-        // This is used because `@deno/astro-adapter` does not support the `npm:sharp` image processor
-        service: passthroughImageService(),
     },
 
     vite: {
