@@ -6,7 +6,7 @@ import { Font } from 'astro:assets';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
 const secondsPerWeek = 604800;
-Astro.response.headers.set('Cache-Control', `max-age=${secondsPerWeek}`);
+Astro.response.headers.append('Cache-Control', `max-age=${secondsPerWeek}`);
 ---
 <html lang="en">
     <head>
