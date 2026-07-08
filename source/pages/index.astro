@@ -150,6 +150,16 @@ section {
             </section>
 
             <section>
+                <h2>Content Collections</h2>
+
+                <ol>{docs.map(doc => (
+                    <li>
+                        <a href={`/docs/${doc.id}`}>{doc.data.title}</a>
+                    </li>
+                ))}</ol>
+            </section>
+
+            <section>
                 <h2>Theme Selection</h2>
 
                 <fieldset id="theme-selector" class="flex flex-col gap-2">
@@ -168,16 +178,6 @@ section {
                         System
                     </label>
                 </fieldset>
-            </section>
-
-            <section>
-                <h2>Content Collections</h2>
-
-                <ol>{docs.map(doc => (
-                    <li>
-                        <a href={`/docs/${doc.id}`}>{doc.data.title}</a>
-                    </li>
-                ))}</ol>
             </section>
         </div>
     </main>
