@@ -2,10 +2,10 @@
 import BaseLayout from '@layouts/base-layout.astro';
 import { getDataFromJson } from './_logic';
 
-export function getStaticPaths(): Array<{ params: { path: number | undefined } }> {
+export function getStaticPaths(): Array<{ params: { path: string | undefined } }> {
     // Accept paths of numbers in the range [1, 100]
     const numberPaths = [...Array(100).keys()].map((i) => ({
-        params: { path: ++i },
+        params: { path: `${++i}` },
     }));
 
     return [
@@ -18,7 +18,6 @@ export function getStaticPaths(): Array<{ params: { path: number | undefined } }
 const { path } = Astro.params;
 const data = path ? getDataFromJson(path) : '(empty path)';
 ---
-
 <BaseLayout>
     <div class="flex flex-col justify-center items-center h-[70vh] gap-14">
         <div class="font-mono space-y-4">

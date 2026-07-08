@@ -102,44 +102,6 @@ See `.github/workflows/deploy.yml`.
 
 ## Using JSR packages
 
-_This process is based on Deno 2.6, and may be able to be simplified with
-[Deno 2.7.](https://deno.com/blog/v2.7#jsr-scheme-support-in-packagejson)_
-
-Packages from [jsr.io](https://jsr.io/) may be used in Astro components by manually adding them to `package.json` and then executing
-`deno install`.
-
-For example, to add the `@std/html` package:
-
-```JSON
-// package.json
-{
-    "dependencies": {
-        "@std/html": "npm:@jsr/std__html@1"
-    }
-}
-```
-
-After executing `deno install`, you will then be able to use the package as follows:
-
-```TypeScript
-// your-page.astro
-import { escape } from '@std/html`;
-```
-
-This is made possible by the `@jsr` entry in `.npmrc`.
-
-### Regarding names
-
-In `package.json`, the property key may be anything you like (it is `@std/html` in the example above).
-
-The property value (`npm:@jsr/std__html@1` above) is derived from the original package name of `@std/html` as follows:
-
-1. The slash between the scope and the package name is replaced with two underscores: `__`
-2. The `@` is replaced with `npm:@jsr/`
-3. The regular semantic version tag is added at the end
-
-### Type declarations
-
 Visual Studio Code may not be able to resolve the type declarations for JSR packages in `.astro` files without modifications to
 `tsconfig.json`.
 
@@ -155,7 +117,3 @@ As an example, the following will allow type declarations to be resolved for pac
     }
 }
 ```
-
-### Further reading
-
-For more information, see the [JSR documentation](https://jsr.io/docs/npm-compatibility#advanced-setup).

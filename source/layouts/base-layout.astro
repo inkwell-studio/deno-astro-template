@@ -1,12 +1,13 @@
 ---
-import '@baseCss';
+import '../base.css';
+
+import { Font } from 'astro:assets';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
 const secondsPerWeek = 604800;
 Astro.response.headers.set('Cache-Control', `max-age=${secondsPerWeek}`);
 ---
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -15,6 +16,9 @@ Astro.response.headers.set('Cache-Control', `max-age=${secondsPerWeek}`);
 
         <title>TODO</title>
         <meta name="description" content="TODO (Polypane recommends keeping this above 50 characters)" />
+
+        <Font cssVariable="--font-jetbrains-mono" />
+        <Font cssVariable="--font-pt-sans" preload />
 
         <link rel="canonical" href={canonicalURL} />
         <link rel="sitemap" href="/sitemap-index.xml" />
@@ -26,21 +30,21 @@ Astro.response.headers.set('Cache-Control', `max-age=${secondsPerWeek}`);
         <!-- This script is necessary to prevent a flash of the inaccurate theme being applied. It must be included inline within the <head> element to function properly.
              The logic and constant values here must be kept in sync with those of `source/logic/theme.ts`. -->
         <script is:inline>
-            (() => {
-                const theme = globalThis.localStorage.getItem('theme');
-                if (
-                    'DARK' === theme ||
-                    ('SYSTEM' === theme &&
-                        globalThis.matchMedia('(prefers-color-scheme: dark)')
-                            .matches)
-                ) {
-                    document.documentElement.classList.add('dark');
-                }
-            })();
+        (() => {
+            const theme = globalThis.localStorage.getItem('theme');
+            if (
+                'DARK' === theme ||
+                ('SYSTEM' === theme &&
+                    globalThis.matchMedia('(prefers-color-scheme: dark)')
+                        .matches)
+            ) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
         </script>
         <script>
-            import { watchForThemeChanges } from '@logic/store';
-            watchForThemeChanges();
+        import { watchForThemeChanges } from '@logic/store';
+        watchForThemeChanges();
         </script>
         <script src="/htmx.min.js" is:inline></script>
     </head>

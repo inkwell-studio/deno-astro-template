@@ -34,17 +34,16 @@ const links = [
 const { path } = Astro.params;
 const onloadContentUrl = links.find((link) => link.clientUrl === `/partials-example/${path}`)?.contentUrl;
 ---
-
 <style>
-    @reference '#baseCss';
+@reference '../../base.css';
 
-    .nav-link {
-        @apply p-2;
-        @apply hover:underline;
-        @apply hover:underline-offset-4;
-        @apply decoration-2;
-        @apply decoration-stone-300;
-    }
+.nav-link {
+    @apply p-2;
+    @apply hover:underline;
+    @apply hover:underline-offset-4;
+    @apply decoration-2;
+    @apply decoration-stone-300;
+}
 </style>
 
 <BaseLayout>
@@ -55,30 +54,26 @@ const onloadContentUrl = links.find((link) => link.clientUrl === `/partials-exam
                     <li class="mb-4">
                         <a href="/" class="nav-link text-lg font-bold">Home</a>
                     </li>
-                    {
-                        links.map((link) => (
-                            <li>
-                                <PartialLink
-                                    clientUrl={link.clientUrl}
-                                    contentUrl={link.contentUrl}
-                                    target={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER_SELECTOR}
-                                    class="nav-link"
-                                    label={link.label}
-                                />
-                            </li>
-                        ))
-                    }
+                    {links.map((link) => (
+                        <li>
+                            <PartialLink
+                                clientUrl={link.clientUrl}
+                                contentUrl={link.contentUrl}
+                                target={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER_SELECTOR}
+                                class="nav-link"
+                                label={link.label}
+                            />
+                        </li>
+                    ))}
                 </ol>
             </nav>
             <main class="bg-stone-300 dark:bg-slate-600 p-12">
                 <div class="mb-4">Content from the server:</div>
-                {
-                    onloadContentUrl ? (
-                        <div id={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER} hx-get={onloadContentUrl} hx-trigger="load">
-                            Loading...
-                        </div>
-                    ) : <div id={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER} />
-                }
+                {onloadContentUrl ? (
+                    <div id={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER} hx-get={onloadContentUrl} hx-trigger="load">
+                        Loading...
+                    </div>
+                ) : <div id={ElementID.PARTIALS_EXAMPLE_CONTENT_WRAPPER} />}
             </main>
         </div>
     </div>

@@ -3,70 +3,71 @@ import BaseLayout from '@layouts/base-layout.astro';
 
 import { Theme } from '@logic/theme';
 ---
-
 <script>
-    import { $theme } from '@logic/store';
-    import { Theme } from '@logic/theme';
+import { $theme } from '@logic/store';
+import { Theme } from '@logic/theme';
 
-    // set the theme selector's value on page load
-    const currentTheme = $theme.get();
-    const themeInput: HTMLInputElement = document.querySelector(`input[name="theme"][value="${currentTheme}"]`);
-    if (themeInput) {
-        themeInput.checked = true;
-    }
+// set the theme selector's value on page load
+const currentTheme = $theme.get();
+const selector = `input[name="theme"][value="${currentTheme}"]`;
+const themeInput: HTMLInputElement | null = document.querySelector(selector);
 
-    // respond to user interaction
-    const themeSelector = document.getElementById('theme-selector');
-    themeSelector?.addEventListener('change', (e) => {
-        const selectedTheme = (e.target as HTMLInputElement).value;
-        $theme.set(selectedTheme as Theme);
-    });
+if (themeInput) {
+    themeInput.checked = true;
+}
+
+// respond to user interaction
+const themeSelector = document.getElementById('theme-selector');
+themeSelector?.addEventListener('change', (e) => {
+    const selectedTheme = (e.target as HTMLInputElement).value;
+    $theme.set(selectedTheme as Theme);
+});
 </script>
 
 <style>
-    @reference '#baseCss';
+@reference '../base.css';
 
-    a {
-        @apply underline;
-    }
+a {
+    @apply underline;
+}
 
-    h1 {
-        @apply text-3xl;
-        @apply font-bold;
-        @apply mb-8;
-    }
+h1 {
+    @apply text-3xl;
+    @apply font-bold;
+    @apply mb-8;
+}
 
-    h2 {
-        @apply text-lg;
-        @apply font-bold;
-        @apply mb-4;
-    }
+h2 {
+    @apply text-lg;
+    @apply font-bold;
+    @apply mb-4;
+}
 
-    section {
-        @apply border-2;
-        @apply border-black/10;
-        @apply rounded-lg;
-        @apply bg-white/5;
-        @apply p-4;
+section {
+    @apply border-2;
+    @apply border-black/10;
+    @apply rounded-lg;
+    @apply bg-white/5;
+    @apply p-4;
 
-        & > h2 {
-            @apply bg-black/10;
-            @apply -mt-4;
-            @apply -mx-4;
-            @apply py-2;
-            @apply px-4;
-            @apply rounded-t-md;
-        }
-    }
-
-    .text-code {
+    & > h2 {
         @apply bg-black/10;
-        @apply dark:bg-black/30;
-        @apply text-sm;
-        @apply font-mono;
-        @apply p-1;
-        @apply rounded-sm;
+        @apply -mt-4;
+        @apply -mx-4;
+        @apply py-2;
+        @apply px-4;
+        @apply rounded-t-md;
     }
+}
+
+.text-code {
+    @apply bg-black/10;
+    @apply dark:bg-black/30;
+    @apply text-sm;
+    @apply font-mono;
+    @apply p-1;
+    @apply rounded-sm;
+}
 </style>
 
 <BaseLayout>
@@ -93,7 +94,7 @@ import { Theme } from '@logic/theme';
                         response header should be set for all pages and partials (see <span class="text-code">base-layout.astro</span> for
                         an implementation, and <a href="https://docs.astro.build/en/guides/prefetch/#browser-support"
                         >Astro's documentation</a>
-                        for the reasoning).
+                        {' '}for the reasoning).
                     </li>
                 </ol>
             </section>

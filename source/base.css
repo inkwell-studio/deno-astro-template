@@ -5,60 +5,24 @@
 
 @theme {
     --tailwind-default-font-sans:
-        ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        ui-sans-serif,
+        system-ui,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji';
     --tailwind-default-font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
     --tailwind-default-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
-    /* For an unknown reason, the `local()` fonts used by the custom `@font-face` fonts are not used if the corresponding font family is the first value in these lists */
-    --font-sans: dummyValue, PTSans, var(--tailwind-default-font-sans);
-    --font-serif: dummyValue, var(--tailwind-default-font-serif);
-    --font-mono: dummyValue, 'JetBrains Mono', var(--tailwind-default-font-mono);
+    --font-sans: var(--font-pt-sans), var(--tailwind-default-font-sans);
+    --font-serif: var(--tailwind-default-font-serif);
+    --font-mono: var(--font-jetbrains-mono), var(--tailwind-default-font-mono);
 }
 
 @layer base {
     :root {
         /* This prevents some problematic inconsistent font-weight renderings between browsers */
         font-synthesis: none;
-    }
-
-    @font-face {
-        font-family: 'PTSans';
-        font-weight: 400;
-        font-display: swap;
-        src:
-            local('PT Sans'),
-            local('PTSans-Regular'),
-            url(/fonts/PTSans-Regular.ttf) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'PTSans';
-        font-weight: 700;
-        font-display: swap;
-        src:
-            local('PT Sans Bold'),
-            local('PTSans-Bold'),
-            url(/fonts/PTSans-Bold.ttf) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'PTSans';
-        font-weight: 700;
-        font-style: italic;
-        font-display: swap;
-        src:
-            local('PT Sans Bold Italic'),
-            local('PTSans-BoldItalic'),
-            url(/fonts/PTSans-BoldItalic.ttf) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'JetBrains Mono';
-        font-weight: 600;
-        font-display: swap;
-        src:
-            local('JetBrains Mono Regular'),
-            local('JetBrainsMono-Regular'),
-            url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
     }
 }

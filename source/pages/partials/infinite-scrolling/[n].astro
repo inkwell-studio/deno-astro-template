@@ -1,10 +1,10 @@
 ---
 import Box from '@components/infinite-scrolling/box.astro';
 
-export function getStaticPaths(): Array<{ params: { n: number } }> {
+export function getStaticPaths(): Array<{ params: { n: string } }> {
     // Accept paths of numbers in the range [1, 10]
     return [...Array(10).keys()].map((i) => ({
-        params: { n: ++i },
+        params: { n: `${++i}` },
     }));
 }
 
