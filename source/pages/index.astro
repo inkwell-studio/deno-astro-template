@@ -1,7 +1,13 @@
 ---
-import BaseLayout from '@layouts/base-layout.astro';
+import { getCollection } from 'astro:content';
 
 import { Theme } from '@logic/theme';
+import { DocsCollection } from '@source/content.config';
+
+import BaseLayout from '@layouts/base-layout.astro';
+
+const docs = (await getCollection('docs') as DocsCollection)
+    .sort((a, b) => a.id.localeCompare(b.id));
 ---
 <script>
 import { $theme } from '@logic/store';
@@ -148,20 +154,30 @@ section {
 
                 <fieldset id="theme-selector" class="flex flex-col gap-2">
                     <label>
-                        <input type="radio" name="theme" value={Theme.LIGHT} />
+                        <input type="radio" name="theme" value={Theme.LIGHT} />{' '}
                         Light
                     </label>
 
                     <label>
-                        <input type="radio" name="theme" value={Theme.DARK} />
+                        <input type="radio" name="theme" value={Theme.DARK} />{' '}
                         Dark
                     </label>
 
                     <label>
-                        <input type="radio" name="theme" value={Theme.SYSTEM} />
+                        <input type="radio" name="theme" value={Theme.SYSTEM} />{' '}
                         System
                     </label>
                 </fieldset>
+            </section>
+
+            <section>
+                <h2>Content Collections</h2>
+
+                <ol>{docs.map(doc => (
+                    <li>
+                        <a href={`/docs/${doc.id}`}>{doc.data.title}</a>
+                    </li>
+                ))}</ol>
             </section>
         </div>
     </main>

@@ -6,6 +6,7 @@
             "@components/*": ["source/components/*"],
             "@layouts/*": ["source/layouts/*"],
             "@logic/*": ["source/logic/*"],
+            "@source/*": ["source/*"],
 
             "@std/*": ["node_modules/@std/*/mod.ts"]
         }
