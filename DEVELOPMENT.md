@@ -11,10 +11,8 @@ To use this repository for your own project:
      - `git config --local user.email abc@example.com`
    - If desired, set your remote:
      - `git remote add origin git@[HOST]:[GITHUB-ACCOUNT]/[PROJECT].git`
-3. Edit the Deno Deploy configuration:
-   - Replace the `project` value in `.github/workflows/deploy.yml` with your Deno Deploy project name
-4. Edit the base URL in `config.ts`
-5. Rename the root directory and `.vscode/deno-astro-template.code-workspace`
+3. Edit the base URL in `config.ts`
+4. Rename the root directory and `.vscode/deno-astro-template.code-workspace`
 
 # Development Instructions
 

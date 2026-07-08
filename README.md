@@ -2,7 +2,7 @@
 
 An [Astro](https://astro.build/) website that runs on [Deno Deploy](https://deno.com/deploy).
 
-It is available at [https://deno-astro-template-i1.deno.dev/](https://deno-astro-template-i1.deno.dev/).
+It is available at [https://deno-astro-template.inkwell-studio.deno.net/](https://deno-astro-template.inkwell-studio.deno.net/).
 
 ## Development
 
