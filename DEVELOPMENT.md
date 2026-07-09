@@ -94,10 +94,6 @@ The code may be debugged with Visual Studio Code via the `.vscode/launch.json` c
 | Server & Client  | n/a               | `Web app: all`       |
 | End-to-end tests | `deno task serve` | `e2e tests`          |
 
-## Deployment to Deno Deploy
-
-See `.github/workflows/deploy.yml`.
-
 ## Using JSR packages
 
 Visual Studio Code may not be able to resolve the type declarations for JSR packages in `.astro` files without modifications to
