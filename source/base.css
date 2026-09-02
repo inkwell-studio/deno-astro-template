@@ -16,6 +16,6 @@
 @layer base {
     :root {
         /* This prevents some problematic inconsistent font-weight renderings between browsers */
-        font-synthesis: none;
+        font-synthesis: small-caps;
     }
 }
